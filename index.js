@@ -60,7 +60,36 @@ async function run() {
                 query.productname = { $regex: name, $options: "i" };
             }
 
+            const page = parseInt(req.query.page);
+            const size = parseInt(req.query.size);
+
+          
+            let price_query = {};
+            let sortQuery = {};
+
+          
+            const sort = req.query.sort || "";
+            if (sort === "asc") {
+                price_query.price = 1; 
+            } else if (sort === "dsc") {
+                price_query.price = -1; 
+            }
+
+          
            
+            const finalSortQuery = { ...price_query, ...sortQuery };
+
+           
+            const minPrice = parseFloat(req.query.minPrice) || 0;
+            const maxPrice = parseFloat(req.query.maxPrice) || 1000;
+            query.price = { $gte: minPrice, $lte: maxPrice };
+
+          
+
+
+
+
+
 
 
 
