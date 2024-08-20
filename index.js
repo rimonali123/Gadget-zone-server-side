@@ -93,13 +93,6 @@ async function run() {
 
           
 
-
-
-
-
-
-
-
             try {
 
                 const allProducts = await phonesCollection.find(query)
