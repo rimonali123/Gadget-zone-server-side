@@ -44,7 +44,19 @@ async function run() {
         app.get('/phones', async (req, res) => {
             const brand = req.query.brand; 
             const category = req.query.category; 
-           
+            const name = req.query.productname; 
+            
+            let query = {};
+
+            if (brand && brand !== 'null') {
+                query.brand = brand;
+            }
+
+            
+
+
+
+
 
 
             try {
