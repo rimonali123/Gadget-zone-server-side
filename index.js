@@ -75,7 +75,14 @@ async function run() {
                 price_query.price = -1; 
             }
 
-          
+            
+            const DateSort = req.query.DateSort || "";
+            if (DateSort === "newest") {
+                sortQuery.creationdate = -1; 
+            } else if (DateSort === "oldest") {
+                sortQuery.creationdate = 1; 
+            }
+
            
             const finalSortQuery = { ...price_query, ...sortQuery };
 
