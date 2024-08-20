@@ -52,11 +52,11 @@ async function run() {
                 query.brand = brand;
             }
 
-            
+            if (category && category !== 'null') {
+                query.category = category;
+            }
 
-
-
-
+          
 
 
             try {
