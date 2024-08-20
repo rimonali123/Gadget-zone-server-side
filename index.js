@@ -37,7 +37,42 @@ async function run() {
         // Connect the client to the server	(optional starting in v4.7)
         // await client.connect();
 
-        
+        const database = client.db("GadgetZone");
+        const phonesCollection = database.collection("phones");
+
+
+        app.get('/phones', async (req, res) => {
+            const brand = req.query.brand; 
+            
+
+
+
+
+
+
+
+            try {
+
+                const allProducts = await phonesCollection.find(query)
+                    .sort(finalSortQuery)
+                    .skip(page * size)
+                    .limit(size)
+                    .toArray();
+
+                // const result = await phonesCollection.find(query).toArray();
+                // res.send(result);
+                const count = await phonesCollection.countDocuments(query)
+                // console.log(allProducts, count)
+
+                res.send({
+                    phones: allProducts,
+                    count: count
+                })
+            } catch (error) {
+                // console.error(error);
+                res.status(500).send({ message: "Internal Server Error" });
+            }
+        });
 
 
 
