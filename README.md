@@ -12,7 +12,7 @@ This is a online mobile store website .
 
 
 ```bash
-https://gadgedzonescic10.netlify.app/
+----------
 ```
 
 
@@ -63,7 +63,7 @@ https://gadgedzonescic10.netlify.app/
 Clone the project
 
 ```bash
-  https://github.com/HumayunKabirSobuj/Gadged-zone-server.git
+  https://github.com/rimonali123/Gadget-zone-server-side
 ```
 
 Go to the project directory
