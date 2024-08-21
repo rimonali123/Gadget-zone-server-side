@@ -1,6 +1,6 @@
 
 
-# Gadged Zone
+# Smart Gadged Zone
  
 This is a online mobile store website .
 
